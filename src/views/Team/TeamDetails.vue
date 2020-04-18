@@ -25,36 +25,13 @@
         </v-col>
       </v-row>
 
-      <v-row
-        v-if="Object.keys(MemberDetails).length>0"
-        justify="center"
-        align="center"
-        class="py-3 px-4"
-      >
-        <v-col
-          md="12"
-          lg="10"
-          sm="11"
-          xs="12"
-          class="pt-3"
-          :class="$vuetify.theme.dark == true?'darkModeCard':'whiteTheme'"
-        >
-          <v-container fluid>
-            <v-row>
-              <v-col md="3" lg="3" sm="4" cols="12" class="text-center">
-                <v-avatar size="150">
-                  <img
-                    :src="getImgUrl(MemberDetails.image, 'profile.jpg')"
-                    :lazy-src="getImgUrl(MemberDetails.image, 'profile.jpg')"
-                    alt
-                  />
-                </v-avatar>
-                <p class="google-font mt-3" style="font-size:120%">{{MemberDetails.name}}</p>
-                <p
-                  class="mt-1 mb-0 google-font mt-0"
-                  style="font-size:100%"
-                >{{MemberDetails.designation}}</p>
-                <v-chip class="mt-2" small>{{MemberDetails.role}}</v-chip>
+                                    <br><br>
+                                    <v-chip class="ma-1" v-if="MemberDetails.active" dark label color="green" small>Active</v-chip>
+                                    <v-chip class="ma-1" v-else label dark color="red" small>Not Active</v-chip>
+                            </v-col>
+                            <v-col md="9" lg="9" sm="8" cols="12">
+                                    <p class="mb-0"><b>Bio</b></p>
+                                    <p class="mt-1 mb-0 google-font mt-0" style="font-size:110%" v-html="marked(MemberDetails.bio)">{{MemberDetails.bio}}</p>
 
                 <br />
                 <br />
