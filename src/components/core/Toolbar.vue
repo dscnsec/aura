@@ -1,11 +1,17 @@
 <template>
   <v-app-bar app fixed clipped-left :class="this.$vuetify.theme.dark == true?'':'white'">
     <v-app-bar-nav-icon @click="toggleDrawer" class="d-md-none d-lg-none"></v-app-bar-nav-icon>
+    <router-link
+        to="/"
+        class="google-font"
+        style="text-decoration:none;font-size:110%"
+        :class="this.$vuetify.theme.dark?'whiteText':'blackText'"
+      ><img src="/favicon.png" alt="DSC NSEC Logo" style="height: 48px;margin-top:7px;" /></router-link>
     <v-toolbar-title class="google-font px-0">
       <router-link
         to="/"
         class="google-font"
-        style="text-decoration:none;font-size:110%"
+        style="text-decoration:none;font-size:130%"
         :class="this.$vuetify.theme.dark?'whiteText':'blackText'"
       >DSC NSEC</router-link>
     </v-toolbar-title>
